@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Notes</title>
+    <style>
+     body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('a.jpg') center/cover no-repeat; /* Replace 'background-image.jpg' with your image path */
+    background-size: cover; /* Optional: Adjusts the size of the background image */
+  background-position: center; /* Optional: Centers the background image */
+  background-repeat: no-repeat; /* Optional: Prevents the background image from repeating */
+}
+
+
+header {
+    background-color: black;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    color: white;
+    
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.note {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 1em;
+    color: white;
+}
+
+.note h2 {
+    color: white;
+}
+
+.note a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.note a:hover {
+    background-color: white;
+}
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Physics Notes</h1>
+    </header>
+    <main id="notes-list">
+        <!-- Notes will be dynamically added here -->
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const notesList = document.getElementById('notes-list');
+
+            // Replace this array with your actual notes data
+            const notesData = [
+                { title: 'Physics Chapter 1', pdfLink: 'watumull.pdf' },
+                { title: 'Physics Chapter 2', pdfLink: 'chapter2.pdf' },
+                // Add more notes as needed
+            ];
+
+            // Loop through notesData and create HTML elements
+            notesData.forEach(note => {
+                const noteElement = document.createElement('div');
+                noteElement.classList.add('note');
+                noteElement.innerHTML = `
+                    <h2>${note.title}</h2>
+                    <a href="${note.pdfLink}" target="_blank" download>Download PDF</a>
+                `;
+                notesList.appendChild(noteElement);
+            });
+        });
+    </script>
+</body>
+</html>
+<script>
